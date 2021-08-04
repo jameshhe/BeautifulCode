@@ -1,0 +1,8 @@
+type Code @model {
+  id: ID!
+  number: Int!
+  problem: String!
+  solution: String!
+  abbreviation: String
+  description: String
+}
