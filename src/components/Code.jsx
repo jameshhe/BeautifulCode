@@ -15,7 +15,7 @@ const Code = () => {
 
     const fetchCode = async () => {
         const codeData = await API.graphql({query: getCode, variables: {id: id}})
-        
+        console.log("code data" + codeData)
         setCode(codeData.data.getCode)
     }
     
