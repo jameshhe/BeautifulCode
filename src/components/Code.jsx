@@ -22,7 +22,9 @@ const Code = () => {
     return (
         <div>
             <h1>{code.number}. {code.problem}</h1>
-            <p>{code.solution}</p>
+            <p className="code-description">{code.description}</p>
+            <p className="code-description">Beauty: </p>
+            <code>{code.solution}</code>
         </div>
     );
 };

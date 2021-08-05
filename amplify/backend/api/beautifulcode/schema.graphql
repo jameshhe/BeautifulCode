@@ -3,6 +3,7 @@ type Code @model {
   number: Int!
   problem: String!
   solution: String!
-  abbreviation: String
-  description: String
+  beauty: String!
+  abbreviation: String!
+  description: String!
 }

@@ -8,6 +8,7 @@ export const onCreateCode = /* GraphQL */ `
       number
       problem
       solution
+      beauty
       abbreviation
       description
       createdAt
@@ -22,6 +23,7 @@ export const onUpdateCode = /* GraphQL */ `
       number
       problem
       solution
+      beauty
       abbreviation
       description
       createdAt
@@ -36,6 +38,7 @@ export const onDeleteCode = /* GraphQL */ `
       number
       problem
       solution
+      beauty
       abbreviation
       description
       createdAt
