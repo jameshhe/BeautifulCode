@@ -26,6 +26,7 @@ const CodeList = () => {
 
     const fetchCodes = async () => {
         const apiData = await API.graphql({query: listCodes})
+        console.log(apiData)
         setCodes(apiData.data.listCodes.items)
     }
 

@@ -4,6 +4,7 @@ import Landing from "./components/Landing";
 import CodeList from "./components/CodeList";
 import Code from "./components/Code";
 import Navigation from "./components/Navigation";
+import CodeUpload from "./components/CodeUpload";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/home" component={Landing} />
         <Route exact path="/codeList" component={CodeList} />
         <Route exact path="/code/:id" component={Code} />
+        <Route exact path="/codeUpload" component={CodeUpload} />
       </Router>
     </div>
   );
