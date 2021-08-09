@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { API, graphqlOperation } from "aws-amplify";
 import { createCode } from "../graphql/mutations";
+import Editor from "react-simple-code-editor";
+import { highlight, languages } from "prismjs/components/prism-core";
+import "prismjs/components/prism-clike";
+import "prismjs/components/prism-javascript";
+import "prismjs/themes/prism.css";
 
 const CodeUpload = () => {
   const initialForm = {
@@ -28,7 +33,7 @@ const CodeUpload = () => {
 
   return (
     <div>
-      <h1>Create a new problem</h1>
+      <h1 className="display-4">Create a new problem</h1>
 
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -48,13 +53,23 @@ const CodeUpload = () => {
         <div className="mb-3">
           <label className="form-label">
             Solution
-            <input
+            {/* <input
               name="solution"
               type="text"
               value={data.solution}
               onChange={(e) => setData({ ...data, solution: e.target.value })}
               className="form-control"
               required
+            /> */}
+            <Editor
+              value={data.solution}
+              onValueChange={(code) => setData({ ...data, solution: code })}
+              highlight={(code) => highlight(code, languages.js)}
+              padding={10}
+              style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 12,
+              }}
             />
           </label>
         </div>

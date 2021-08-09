@@ -4,6 +4,7 @@ type Code @model {
   problem: String!
   solution: String!
   beauty: String!
+  language: String
   abbreviation: String!
   description: String!
 }
