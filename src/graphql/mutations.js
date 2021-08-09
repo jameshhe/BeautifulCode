@@ -12,6 +12,7 @@ export const createCode = /* GraphQL */ `
       problem
       solution
       beauty
+      language
       abbreviation
       description
       createdAt
@@ -30,6 +31,7 @@ export const updateCode = /* GraphQL */ `
       problem
       solution
       beauty
+      language
       abbreviation
       description
       createdAt
@@ -48,6 +50,7 @@ export const deleteCode = /* GraphQL */ `
       problem
       solution
       beauty
+      language
       abbreviation
       description
       createdAt

@@ -9,6 +9,7 @@ export const getCode = /* GraphQL */ `
       problem
       solution
       beauty
+      language
       abbreviation
       description
       createdAt
@@ -29,6 +30,7 @@ export const listCodes = /* GraphQL */ `
         problem
         solution
         beauty
+        language
         abbreviation
         description
         createdAt

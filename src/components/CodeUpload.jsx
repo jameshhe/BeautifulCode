@@ -9,24 +9,27 @@ import "prismjs/themes/prism.css";
 
 const CodeUpload = () => {
   const initialForm = {
+    number: "",
     problem: "",
     solution: "",
     beauty: "",
     description: "",
+    language: "",
   };
 
   const [data, setData] = useState(initialForm);
 
   const handleSubmit = async () => {
     let codeDetails = {
-      number: 1,
+      number: data.number,
       problem: data.problem,
       abbreviation: data.problem,
       solution: data.solution,
       beauty: data.beauty,
       description: data.description,
+      language: data.language,
     };
-    console.log(codeDetails);
+
     await API.graphql(graphqlOperation(createCode, { input: codeDetails }));
     setData(initialForm);
   };
@@ -36,6 +39,19 @@ const CodeUpload = () => {
       <h1 className="display-4">Create a new problem</h1>
 
       <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label className="form-label">
+            Number
+            <input
+              name="number"
+              type="number"
+              value={data.number}
+              onChange={(e) => setData({ ...data, number: e.target.value })}
+              className="form-control"
+              required
+            />
+          </label>
+        </div>
         <div className="mb-3">
           <label className="form-label">
             Problem
@@ -70,6 +86,20 @@ const CodeUpload = () => {
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 fontSize: 12,
               }}
+            />
+          </label>
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">
+            Language
+            <input
+              name="language"
+              type="text"
+              value={data.language}
+              onChange={(e) => setData({ ...data, language: e.target.value })}
+              className="form-control"
+              required
             />
           </label>
         </div>

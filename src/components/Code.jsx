@@ -37,7 +37,7 @@ const Code = () => {
 
       <div className="container mx-auto p-4">
         <CodeBlock
-          language={"python"}
+          language={code.language}
           text={code.solution}
           theme={nord}
           wrapLines={true}
