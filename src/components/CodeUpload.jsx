@@ -93,14 +93,21 @@ const CodeUpload = () => {
         <div className="mb-3">
           <label className="form-label">
             Language
-            <input
+            <select
               name="language"
-              type="text"
               value={data.language}
-              onChange={(e) => setData({ ...data, language: e.target.value })}
+              onChange={(e) => {
+                setData({ ...data, language: e.target.value });
+              }}
               className="form-control"
               required
-            />
+            >
+              <option value={"python"}>Python</option>
+              <option value={"java"}>Java</option>
+              <option value={"cpp"}>C++</option>
+              <option value={"c"}>C</option>
+              <option value={"javascript"}>JavaScript</option>
+            </select>
           </label>
         </div>
 

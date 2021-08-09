@@ -40,7 +40,7 @@ const CodeList = () => {
         <Loading />
       ) : (
         <div>
-          <h1>Code List</h1>
+          <h1 className="display-3">Code List</h1>
           <div>
             <Table columns={columns} data={codes} />
           </div>
