@@ -44,6 +44,11 @@
   padding: 0 3px;
 } */
 
+.Code {
+  font-family: sans-serif;
+  text-align: center;
+}
+
 .code-description {
   background-color: #eee;
   border-radius: 3px;

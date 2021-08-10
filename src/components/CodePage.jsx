@@ -2,21 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { API } from "aws-amplify";
 import { getCode } from "../graphql/queries";
-import { CodeBlock, nord } from "react-code-blocks";
-import Editor from "react-simple-code-editor";
-import { highlight, languages } from "prismjs/components/prism-core";
-import "prismjs/components/prism-clike";
-import "prismjs/components/prism-javascript";
-import "prismjs/themes/prism.css"; //Example style, you can use another
 import Loading from "./Loading";
+import Prism from "prismjs";
+import "prismjs/themes/prism-tomorrow.css";
 
-const Code = () => {
+const CodePage = () => {
   let { id } = useParams();
 
   const [code, setCode] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetchCode();
+    Prism.highlightAll();
   }, []);
 
   const fetchCode = async () => {
@@ -42,13 +39,26 @@ const Code = () => {
           <p className="code-description">Beauty: {code.beauty} </p>
 
           <div className="container mx-auto p-4">
-            <CodeBlock
+            {/* <CodeBlock
               language={code.language}
               text={code.solution}
               theme={nord}
               wrapLines={true}
               codeBlock
-            />
+            /> */}
+            {/* <Editor
+              value={code.solution}
+              //   onValueChange={(code) => setCode({ ...code, solution: code })}
+              highlight={(code) => highlight(code, languages.python)}
+              padding={10}
+              style={{
+                fontFamily: '"Fira code", "Fira Mono", monospace',
+                fontSize: 12,
+              }}
+            /> */}
+            <pre>
+              <code className={`language-java`}>{code.solution}</code>
+            </pre>
           </div>
         </div>
       )}
@@ -56,4 +66,4 @@ const Code = () => {
   );
 };
 
-export default Code;
+export default CodePage;

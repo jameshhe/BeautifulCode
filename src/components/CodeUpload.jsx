@@ -14,7 +14,7 @@ const CodeUpload = () => {
     solution: "",
     beauty: "",
     description: "",
-    language: "",
+    language: "python",
   };
 
   const [data, setData] = useState(initialForm);
